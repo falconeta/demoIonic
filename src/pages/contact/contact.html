@@ -7,27 +7,26 @@
 </ion-header>
 
 <ion-content>
-  
+
     <ion-list>
+      <form (ngSubmit)="setData()">
       <ion-item>
         <ion-label>id</ion-label>
-        <ion-input type="text" [(ngModel)]="idlibro"></ion-input>
+        <ion-input type="text" [(ngModel)]="libro.id" name="id"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>nome</ion-label>
-        <ion-input type="text" [(ngModel)]="nome"></ion-input>
+        <ion-input type="text" [(ngModel)]="libro.name" name="name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>descrizione</ion-label>
-        <ion-input type="text" [(ngModel)]="descrizione"></ion-input>
+        <ion-input type="text" [(ngModel)]="libro.descrizione" name="descrizione"></ion-input>
       </ion-item>
+      <button ion-button full type="submit" block >Sign In</button>
+    </form>
 
     </ion-list>
 
-    <div padding>
-      <button ion-button full (click)="setData()">Sign In</button>
-    </div>
-  
   <ion-item>
     <ion-label>cerca id</ion-label>
     <ion-input type="text" [(ngModel)]="id"></ion-input>
@@ -35,6 +34,8 @@
   <div padding>
     <button ion-button full (click)="getData()">cerca per id</button>
   </div>
+  <ion-label>{{libro2.id}}</ion-label>
+  <ion-label>{{libro2.name}}</ion-label>
   <div padding>
     <button ion-button full (click)="clear()">Clear</button>
   </div>

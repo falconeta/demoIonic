@@ -10,33 +10,28 @@ export class ContactPage {
 value: string;
 libro: Libro = new Libro();
 libri: Libro[] = [];
+libro2: Libro = new Libro();
 id = 0;
-nome = '';
-descrizione = '';
-idlibro= 0;
   constructor(private libroProvider: LibroProvider, public navCtrl: NavController) {
-    
+
   }
   ionViewDidLoad(){
-    
+
 
   }
 setData(){
+  const lib = Object.assign({}, this.libro);
   alert(this.libro.name);
-  const x = new Libro();
-  x.descrizione = this.descrizione;
-  x.name = this.nome;
-  x.id = this.idlibro;
-  this.libroProvider.addLibro(x);
-  this.idlibro = 0;
-  this.descrizione = '';
-  this.nome = '';
+  this.libroProvider.addLibro(lib);
+  this.libro.id = null;
+  this.libro.name = '';
+  this.libro.descrizione = '';
   this.libri = this.libroProvider.getLibri();
   }
 getData(){
-  this.libro = this.libroProvider.getLibro(this.id);
+  this.libro2 = this.libroProvider.getLibro(this.id);
 }
   clear(){
-    
+
   }
 }

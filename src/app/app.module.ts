@@ -15,6 +15,8 @@ import { BatteryStatus } from '@ionic-native/battery-status';
 import { Geolocation } from '@ionic-native/geolocation';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { LibroProvider } from '../providers/libro/libro';
+import { FotografiePage } from '../pages/fotografie/fotografie';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { LibroProvider } from '../providers/libro/libro';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    FotografiePage
   ],
   imports: [
     BrowserModule,
@@ -34,14 +37,15 @@ import { LibroProvider } from '../providers/libro/libro';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    FotografiePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BatteryStatus, Geolocation, NativeStorage,
-    LibroProvider
+    LibroProvider, Camera
   ]
 })
 export class AppModule {}

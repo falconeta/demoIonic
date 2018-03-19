@@ -16,7 +16,8 @@ export class LibroProvider {
     this.nativeStorage.getItem('libri').then(libri => this.libri = libri);
   }
   addLibro(libro: Libro) {
-    this.libri.push(libro);
+    const libroc = libro;
+    this.libri.push(libroc);
     this.nativeStorage.setItem('libri', this.libri).then(() => alert('ok!'));
   }
   getLibro(id): Libro {
