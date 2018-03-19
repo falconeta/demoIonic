@@ -7,11 +7,39 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  
+    <ion-list>
+      <ion-item>
+        <ion-label>id</ion-label>
+        <ion-input type="text" [(ngModel)]="idlibro"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>nome</ion-label>
+        <ion-input type="text" [(ngModel)]="nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>descrizione</ion-label>
+        <ion-input type="text" [(ngModel)]="descrizione"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button full (click)="setData()">Sign In</button>
+    </div>
+  
+  <ion-item>
+    <ion-label>cerca id</ion-label>
+    <ion-input type="text" [(ngModel)]="id"></ion-input>
+  </ion-item>
+  <div padding>
+    <button ion-button full (click)="getData()">cerca per id</button>
+  </div>
+  <div padding>
+    <button ion-button full (click)="clear()">Clear</button>
+  </div>
+  <div>
+    <ion-label *ngFor="let libro of libri">{{libro.name}}</ion-label>
+  </div>
+
 </ion-content>
